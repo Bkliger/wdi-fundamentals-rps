@@ -26,7 +26,6 @@ function getPlayerMove(move) {
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
     return move = move || getInput();
-    };
 }
 
 function getComputerMove(move) {
@@ -36,6 +35,7 @@ function getComputerMove(move) {
     return move = move || randomPlay();
 }
 
+/*
 function getWinner(playerMove,computerMove) {
     var winner;
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
@@ -43,16 +43,18 @@ function getWinner(playerMove,computerMove) {
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     
 }
+*/
 
 var playerTotal = 0;
 var computerTotal = 0;
 var playerWins = 0;
 var computerWins = 0;
+var move;
 console.log('Let\'s play Rock Paper Scissors');
 while (playerTotal != 5 && computerTotal != 5) {
-    var playerMove = getInput();
-    var computerMove = randomPlay();
-    playGame(playerMove,computerMove);
+    var playerMove = getPlayerMove(move);
+    var computerMove = getComputerMove(move);
+    getWinner(playerMove,computerMove);
     playerTotal = playerTotal + playerWins;
     computerTotal = computerTotal + computerWins;
     console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
@@ -60,7 +62,7 @@ while (playerTotal != 5 && computerTotal != 5) {
     
 }
 
-function playGame(playerMove,computerMove) {
+function getWinner(playerMove,computerMove) {
     playerWins = 0;
     computerWins = 0;
     switch (playerMove) {
@@ -100,14 +102,14 @@ function playGame(playerMove,computerMove) {
 }
 
 
-
+/*
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
-    return [playerWins, computerWins];
-}
+//    return [playerWins, computerWins];
+//}
 
-
+*/
